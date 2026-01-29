@@ -55,7 +55,7 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="hidden lg:block absolute top-[25%] left-[8%] xl:left-[12%] px-6 py-3 bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/40 rounded-xl text-cyan-300 font-bold text-xl shadow-2xl shadow-cyan-500/20"
+        className="hidden lg:block absolute top-[28%] left-[12%] xl:left-[18%] px-6 py-3 bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/40 rounded-xl text-cyan-300 font-bold text-xl shadow-2xl shadow-cyan-500/20"
       >
         React
       </motion.div>
@@ -63,7 +63,7 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.7, duration: 0.5 }}
-        className="hidden lg:block absolute top-[20%] right-[8%] xl:right-[12%] px-5 py-2.5 bg-emerald-500/15 backdrop-blur-sm border border-emerald-400/30 rounded-lg text-emerald-300/80 font-semibold text-base shadow-xl shadow-emerald-500/10 opacity-85"
+        className="hidden lg:block absolute top-[22%] right-[12%] xl:right-[18%] px-5 py-2.5 bg-emerald-500/15 backdrop-blur-sm border border-emerald-400/30 rounded-lg text-emerald-300/80 font-semibold text-base shadow-xl shadow-emerald-500/10 opacity-85"
       >
         Node.js
       </motion.div>
@@ -71,7 +71,7 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.9, duration: 0.5 }}
-        className="hidden lg:block absolute bottom-[30%] left-[6%] xl:left-[10%] px-6 py-3 bg-blue-500/20 backdrop-blur-sm border border-blue-400/40 rounded-xl text-blue-300 font-bold text-xl shadow-2xl shadow-blue-500/20"
+        className="hidden lg:block absolute bottom-[32%] left-[10%] xl:left-[16%] px-6 py-3 bg-blue-500/20 backdrop-blur-sm border border-blue-400/40 rounded-xl text-blue-300 font-bold text-xl shadow-2xl shadow-blue-500/20"
       >
         TypeScript
       </motion.div>
@@ -79,7 +79,7 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 2.1, duration: 0.5 }}
-        className="hidden lg:block absolute bottom-[22%] right-[6%] xl:right-[10%] px-4 py-2 bg-gray-500/15 backdrop-blur-sm border border-gray-400/30 rounded-lg text-gray-300/70 font-semibold text-sm shadow-lg shadow-gray-500/10 opacity-75"
+        className="hidden lg:block absolute bottom-[25%] right-[10%] xl:right-[16%] px-4 py-2 bg-gray-500/15 backdrop-blur-sm border border-gray-400/30 rounded-lg text-gray-300/70 font-semibold text-sm shadow-lg shadow-gray-500/10 opacity-75"
       >
         Next.js
       </motion.div>
