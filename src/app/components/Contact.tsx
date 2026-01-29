@@ -92,7 +92,7 @@ export function Contact() {
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-      <div className="w-full max-w-[1400px] mx-auto px-12 relative z-10">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -109,7 +109,7 @@ export function Contact() {
           >
             {t('contact.title')}
           </motion.span>
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               {t('contact.heading1')}
             </span>
@@ -123,14 +123,14 @@ export function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="col-span-2 space-y-6"
+            className="lg:col-span-2 space-y-6"
           >
             {contactInfo.map((item, index) => (
               <motion.div
@@ -198,7 +198,7 @@ export function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="col-span-3"
+            className="lg:col-span-3"
           >
             <div className="relative">
               {/* Form glow */}

@@ -49,7 +49,7 @@ export function Projects() {
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[60px]" />
       </div>
 
-      <div className="w-full max-w-[1600px] mx-auto px-8 relative z-10">
+      <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-8 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export function Projects() {
           >
             {t('projects.title')}
           </motion.span>
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               {t('projects.heading1')}
             </span>{' '}
@@ -80,14 +80,14 @@ export function Projects() {
         </motion.div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-12 grid-rows-2 gap-6 h-[700px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-2 gap-4 sm:gap-6 lg:h-[700px]">
           {/* Large card - left side */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="col-span-5 row-span-2 group relative"
+            className="col-span-1 lg:col-span-5 lg:row-span-2 group relative h-[400px] sm:h-[450px] lg:h-auto"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-purple-400 rounded-3xl opacity-0 group-hover:opacity-50 blur transition-all duration-500" />
             <div className="relative h-full rounded-3xl bg-gray-900 border border-gray-800 overflow-hidden group-hover:border-transparent transition-all">
@@ -129,7 +129,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="col-span-7 row-span-1 group relative"
+            className="col-span-1 lg:col-span-7 lg:row-span-1 group relative h-[300px] sm:h-[320px] lg:h-auto"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-50 blur transition-all duration-500" />
             <div className="relative h-full rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden group-hover:border-transparent transition-all">
@@ -171,7 +171,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="col-span-4 row-span-1 group relative"
+            className="col-span-1 lg:col-span-4 lg:row-span-1 group relative h-[280px] sm:h-[300px] lg:h-auto"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-50 blur transition-all duration-500" />
             <div className="relative h-full rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden group-hover:border-transparent transition-all">
@@ -206,7 +206,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="col-span-3 row-span-1 group relative"
+            className="col-span-1 lg:col-span-3 lg:row-span-1 group relative h-[280px] sm:h-[300px] lg:h-auto"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-purple-400 rounded-2xl opacity-0 group-hover:opacity-50 blur transition-all duration-500" />
             <div className="relative h-full rounded-2xl bg-gray-900 border border-gray-800 overflow-hidden group-hover:border-transparent transition-all">
