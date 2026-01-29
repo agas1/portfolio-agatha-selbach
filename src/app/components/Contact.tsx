@@ -4,10 +4,10 @@ import { useState, useRef } from 'react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 import emailjs from '@emailjs/browser';
 
-// EmailJS Configuration - Replace with your own IDs from https://emailjs.com
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Create at EmailJS > Email Services
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Create at EmailJS > Email Templates
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Get from EmailJS > Account > API Keys
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = 'service_b3xdz9w';
+const EMAILJS_TEMPLATE_ID = 'template_o7xevjp';
+const EMAILJS_PUBLIC_KEY = 'gzP5g63p3roZ3qejy';
 
 export function Contact() {
   const { t } = useLanguage();
