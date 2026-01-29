@@ -50,12 +50,12 @@ export function Hero() {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-      {/* Floating tech badges with depth effect and technology colors */}
+      {/* Floating tech badges - hidden on mobile, positioned away from text */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute top-[32%] left-[28%] px-6 py-3 bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/40 rounded-xl text-cyan-300 font-bold text-xl shadow-2xl shadow-cyan-500/20"
+        className="hidden lg:block absolute top-[25%] left-[8%] xl:left-[12%] px-6 py-3 bg-cyan-500/20 backdrop-blur-sm border border-cyan-400/40 rounded-xl text-cyan-300 font-bold text-xl shadow-2xl shadow-cyan-500/20"
       >
         React
       </motion.div>
@@ -63,7 +63,7 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.7, duration: 0.5 }}
-        className="absolute top-[30%] right-[28%] px-5 py-2.5 bg-emerald-500/15 backdrop-blur-sm border border-emerald-400/30 rounded-lg text-emerald-300/80 font-semibold text-base shadow-xl shadow-emerald-500/10 opacity-85 blur-[0.5px]"
+        className="hidden lg:block absolute top-[20%] right-[8%] xl:right-[12%] px-5 py-2.5 bg-emerald-500/15 backdrop-blur-sm border border-emerald-400/30 rounded-lg text-emerald-300/80 font-semibold text-base shadow-xl shadow-emerald-500/10 opacity-85"
       >
         Node.js
       </motion.div>
@@ -71,7 +71,7 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1.9, duration: 0.5 }}
-        className="absolute bottom-[34%] left-[30%] px-6 py-3 bg-blue-500/20 backdrop-blur-sm border border-blue-400/40 rounded-xl text-blue-300 font-bold text-xl shadow-2xl shadow-blue-500/20"
+        className="hidden lg:block absolute bottom-[30%] left-[6%] xl:left-[10%] px-6 py-3 bg-blue-500/20 backdrop-blur-sm border border-blue-400/40 rounded-xl text-blue-300 font-bold text-xl shadow-2xl shadow-blue-500/20"
       >
         TypeScript
       </motion.div>
@@ -79,12 +79,12 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 2.1, duration: 0.5 }}
-        className="absolute bottom-[28%] right-[30%] px-4 py-2 bg-gray-500/15 backdrop-blur-sm border border-gray-400/30 rounded-lg text-gray-300/70 font-semibold text-sm shadow-lg shadow-gray-500/10 opacity-75 blur-[0.8px]"
+        className="hidden lg:block absolute bottom-[22%] right-[6%] xl:right-[10%] px-4 py-2 bg-gray-500/15 backdrop-blur-sm border border-gray-400/30 rounded-lg text-gray-300/70 font-semibold text-sm shadow-lg shadow-gray-500/10 opacity-75"
       >
         Next.js
       </motion.div>
 
-      <div className="w-full max-w-[1200px] mx-auto px-8 relative z-10 text-center">
+      <div className="w-full max-w-[1200px] mx-auto px-4 sm:px-8 relative z-10 text-center">
         {/* Floating dots above the name */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -102,7 +102,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-6xl lg:text-8xl font-bold mb-6 tracking-tight"
+          className="text-4xl sm:text-6xl lg:text-8xl font-bold mb-6 tracking-tight"
         >
           <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent">
             Agatha
@@ -117,7 +117,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-2xl lg:text-3xl text-gray-400 font-light mb-10"
+          className="text-xl sm:text-2xl lg:text-3xl text-gray-400 font-light mb-8 sm:mb-10"
         >
           Full Stack Developer
         </motion.h2>
@@ -129,7 +129,7 @@ export function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mb-12"
         >
-          <div className="font-mono text-base lg:text-lg">
+          <div className="font-mono text-xs sm:text-base lg:text-lg">
             <div className="mb-2">
               <TypedText text='skills: ["React", "Node", "TypeScript"]' color="text-amber-400" delay={0.8} />
             </div>
@@ -150,11 +150,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3.8, duration: 0.8 }}
-          className="flex flex-wrap gap-4 justify-center mb-10"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-10 px-4 sm:px-0"
         >
           <button
             onClick={() => scrollToSection('projects')}
-            className="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-500 text-white text-base font-medium rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_8px_rgba(168,85,247,0.4)]"
+            className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-purple-500 text-white text-sm sm:text-base font-medium rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_8px_rgba(168,85,247,0.4)]"
           >
             <span className="relative z-10 flex items-center gap-2">
               {t('hero.viewProjects')}
@@ -164,7 +164,7 @@ export function Hero() {
           </button>
           <button
             onClick={() => scrollToSection('contact')}
-            className="px-8 py-4 border border-gray-700 text-white text-base font-medium rounded-xl hover:bg-white/5 hover:border-purple-500/50 transition-all backdrop-blur-sm"
+            className="px-6 sm:px-8 py-3 sm:py-4 border border-gray-700 text-white text-sm sm:text-base font-medium rounded-xl hover:bg-white/5 hover:border-purple-500/50 transition-all backdrop-blur-sm"
           >
             {t('hero.contact')}
           </button>
