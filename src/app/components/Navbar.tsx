@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Globe } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
+import { DecisionToggle } from '@/app/components/DecisionToggle';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,7 +86,10 @@ export function Navbar() {
             ))}
 
             {/* Controls */}
-            <div className="flex items-center gap-2 ml-4 pl-4 border-l border-gray-800">
+            <div className="flex items-center gap-3 ml-4 pl-4 border-l border-gray-800">
+              {/* Decision Mode Toggle */}
+              <DecisionToggle />
+
               {/* Language Selector */}
               <div className="relative">
                 <motion.button

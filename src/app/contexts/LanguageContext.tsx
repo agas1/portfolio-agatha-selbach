@@ -60,15 +60,44 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.heading1': 'Featured',
     'projects.heading2': 'Projects',
     'projects.subtitle': 'Some of the projects I recently developed',
-    'projects.ecommerce.title': 'E-commerce Platform',
-    'projects.ecommerce.description': 'Complete e-commerce platform with admin panel, shopping cart, integrated payment and review system.',
-    'projects.dashboard.title': 'Analytics Dashboard',
-    'projects.dashboard.description': 'Interactive dashboard for real-time data analysis with dynamic charts, advanced filters and report export.',
-    'projects.social.title': 'Social Media App',
-    'projects.social.description': 'Social network with post feed, likes and comments system, real-time chat and push notifications.',
-    'projects.task.title': 'Task Management Tool',
-    'projects.task.description': 'Kanban-style task management tool with drag-and-drop, team collaboration and cloud sync.',
+    'projects.viewProject': 'View project',
     'projects.viewMore': 'View More Projects on GitHub',
+    'projects.devMode.problem': 'Problem',
+    'projects.devMode.decision': 'Decision',
+    'projects.devMode.tradeoff': 'Trade-off',
+    'projects.devMode.result': 'Result',
+
+    // Project 1 - iAgente
+    'projects.iagente.title': 'iAgente Platform',
+    'projects.iagente.description': 'Complete AI platform for automated customer service with chatbots, integrations and real-time analytics.',
+    'projects.iagente.problem': 'High volume of repetitive support tickets consuming team time',
+    'projects.iagente.decision': 'Built modular chatbot architecture with NLP pipeline for intent classification',
+    'projects.iagente.tradeoff': 'More initial complexity vs long-term scalability and maintainability',
+    'projects.iagente.result': '↓ 60% support tickets, ↑ 3x response speed',
+
+    // Project 2 - Home Finder
+    'projects.homefinder.title': 'Home Finder',
+    'projects.homefinder.description': 'Real estate platform with advanced search, interactive maps and virtual tours.',
+    'projects.homefinder.problem': 'Users struggling to find properties matching multiple criteria',
+    'projects.homefinder.decision': 'Implemented faceted search with Elasticsearch and geo-spatial queries',
+    'projects.homefinder.tradeoff': 'Additional infrastructure cost vs search performance',
+    'projects.homefinder.result': '↑ 45% user engagement, ↓ 30% bounce rate',
+
+    // Project 3 - Organo
+    'projects.organo.title': 'Organo',
+    'projects.organo.description': 'Team organization tool with drag-and-drop, customizable cards and department management.',
+    'projects.organo.problem': 'Companies needed visual way to manage team structure',
+    'projects.organo.decision': 'React DnD with optimistic updates for smooth UX',
+    'projects.organo.tradeoff': 'State complexity vs instant feedback',
+    'projects.organo.result': '↓ 50% time organizing teams',
+
+    // Project 4 - Meteora
+    'projects.meteora.title': 'Meteora',
+    'projects.meteora.description': 'Fashion e-commerce with personalized recommendations and seamless checkout.',
+    'projects.meteora.problem': 'Low conversion rate on product discovery',
+    'projects.meteora.decision': 'Collaborative filtering for recommendations + lazy loading',
+    'projects.meteora.tradeoff': 'Algorithm complexity vs conversion gains',
+    'projects.meteora.result': '↑ 25% conversion rate',
 
     // Contact
     'contact.title': "Let's Talk",
@@ -153,15 +182,44 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.heading1': 'Projetos em',
     'projects.heading2': 'Destaque',
     'projects.subtitle': 'Alguns dos projetos que desenvolvi recentemente',
-    'projects.ecommerce.title': 'Plataforma E-commerce',
-    'projects.ecommerce.description': 'Plataforma completa de e-commerce com painel administrativo, carrinho de compras, pagamento integrado e sistema de avaliações.',
-    'projects.dashboard.title': 'Dashboard Analytics',
-    'projects.dashboard.description': 'Dashboard interativo para análise de dados em tempo real com gráficos dinâmicos, filtros avançados e exportação de relatórios.',
-    'projects.social.title': 'App de Rede Social',
-    'projects.social.description': 'Rede social com feed de posts, sistema de likes e comentários, chat em tempo real e notificações push.',
-    'projects.task.title': 'Ferramenta de Gerenciamento',
-    'projects.task.description': 'Ferramenta de gerenciamento de tarefas estilo Kanban com drag-and-drop, colaboração em equipe e sincronização em nuvem.',
+    'projects.viewProject': 'Ver projeto',
     'projects.viewMore': 'Ver Mais Projetos no GitHub',
+    'projects.devMode.problem': 'Problema',
+    'projects.devMode.decision': 'Decisão',
+    'projects.devMode.tradeoff': 'Trade-off',
+    'projects.devMode.result': 'Resultado',
+
+    // Project 1 - iAgente
+    'projects.iagente.title': 'Plataforma iAgente',
+    'projects.iagente.description': 'Plataforma completa de IA para atendimento automatizado com chatbots, integrações e analytics em tempo real.',
+    'projects.iagente.problem': 'Alto volume de tickets de suporte repetitivos consumindo tempo da equipe',
+    'projects.iagente.decision': 'Arquitetura modular de chatbot com pipeline NLP para classificação de intenções',
+    'projects.iagente.tradeoff': 'Maior complexidade inicial vs escalabilidade e manutenibilidade a longo prazo',
+    'projects.iagente.result': '↓ 60% tickets de suporte, ↑ 3x velocidade de resposta',
+
+    // Project 2 - Home Finder
+    'projects.homefinder.title': 'Home Finder',
+    'projects.homefinder.description': 'Plataforma imobiliária com busca avançada, mapas interativos e tours virtuais.',
+    'projects.homefinder.problem': 'Usuários com dificuldade em encontrar imóveis com múltiplos critérios',
+    'projects.homefinder.decision': 'Busca facetada com Elasticsearch e queries geo-espaciais',
+    'projects.homefinder.tradeoff': 'Custo adicional de infraestrutura vs performance de busca',
+    'projects.homefinder.result': '↑ 45% engajamento, ↓ 30% taxa de rejeição',
+
+    // Project 3 - Organo
+    'projects.organo.title': 'Organo',
+    'projects.organo.description': 'Ferramenta de organização de equipes com drag-and-drop, cards personalizáveis e gestão de departamentos.',
+    'projects.organo.problem': 'Empresas precisavam de forma visual para gerenciar estrutura de equipes',
+    'projects.organo.decision': 'React DnD com atualizações otimistas para UX fluida',
+    'projects.organo.tradeoff': 'Complexidade de estado vs feedback instantâneo',
+    'projects.organo.result': '↓ 50% tempo organizando equipes',
+
+    // Project 4 - Meteora
+    'projects.meteora.title': 'Meteora',
+    'projects.meteora.description': 'E-commerce de moda com recomendações personalizadas e checkout fluido.',
+    'projects.meteora.problem': 'Baixa taxa de conversão na descoberta de produtos',
+    'projects.meteora.decision': 'Filtragem colaborativa para recomendações + lazy loading',
+    'projects.meteora.tradeoff': 'Complexidade do algoritmo vs ganhos em conversão',
+    'projects.meteora.result': '↑ 25% taxa de conversão',
 
     // Contact
     'contact.title': 'Vamos Conversar',
@@ -246,15 +304,44 @@ const translations: Record<Language, Record<string, string>> = {
     'projects.heading1': 'Proyectos',
     'projects.heading2': 'Destacados',
     'projects.subtitle': 'Algunos de los proyectos que desarrollé recientemente',
-    'projects.ecommerce.title': 'Plataforma E-commerce',
-    'projects.ecommerce.description': 'Plataforma completa de comercio electrónico con panel de administración, carrito de compras, pago integrado y sistema de reseñas.',
-    'projects.dashboard.title': 'Dashboard de Analíticas',
-    'projects.dashboard.description': 'Dashboard interactivo para análisis de datos en tiempo real con gráficos dinámicos, filtros avanzados y exportación de informes.',
-    'projects.social.title': 'App de Red Social',
-    'projects.social.description': 'Red social con feed de publicaciones, sistema de likes y comentarios, chat en tiempo real y notificaciones push.',
-    'projects.task.title': 'Herramienta de Gestión',
-    'projects.task.description': 'Herramienta de gestión de tareas estilo Kanban con arrastrar y soltar, colaboración en equipo y sincronización en la nube.',
+    'projects.viewProject': 'Ver proyecto',
     'projects.viewMore': 'Ver Más Proyectos en GitHub',
+    'projects.devMode.problem': 'Problema',
+    'projects.devMode.decision': 'Decisión',
+    'projects.devMode.tradeoff': 'Trade-off',
+    'projects.devMode.result': 'Resultado',
+
+    // Project 1 - iAgente
+    'projects.iagente.title': 'Plataforma iAgente',
+    'projects.iagente.description': 'Plataforma completa de IA para atención automatizada con chatbots, integraciones y analytics en tiempo real.',
+    'projects.iagente.problem': 'Alto volumen de tickets de soporte repetitivos consumiendo tiempo del equipo',
+    'projects.iagente.decision': 'Arquitectura modular de chatbot con pipeline NLP para clasificación de intenciones',
+    'projects.iagente.tradeoff': 'Mayor complejidad inicial vs escalabilidad y mantenibilidad a largo plazo',
+    'projects.iagente.result': '↓ 60% tickets de soporte, ↑ 3x velocidad de respuesta',
+
+    // Project 2 - Home Finder
+    'projects.homefinder.title': 'Home Finder',
+    'projects.homefinder.description': 'Plataforma inmobiliaria con búsqueda avanzada, mapas interactivos y tours virtuales.',
+    'projects.homefinder.problem': 'Usuarios con dificultad para encontrar propiedades con múltiples criterios',
+    'projects.homefinder.decision': 'Búsqueda facetada con Elasticsearch y consultas geo-espaciales',
+    'projects.homefinder.tradeoff': 'Costo adicional de infraestructura vs rendimiento de búsqueda',
+    'projects.homefinder.result': '↑ 45% engagement, ↓ 30% tasa de rebote',
+
+    // Project 3 - Organo
+    'projects.organo.title': 'Organo',
+    'projects.organo.description': 'Herramienta de organización de equipos con arrastrar y soltar, tarjetas personalizables y gestión de departamentos.',
+    'projects.organo.problem': 'Empresas necesitaban forma visual para gestionar estructura de equipos',
+    'projects.organo.decision': 'React DnD con actualizaciones optimistas para UX fluida',
+    'projects.organo.tradeoff': 'Complejidad de estado vs feedback instantáneo',
+    'projects.organo.result': '↓ 50% tiempo organizando equipos',
+
+    // Project 4 - Meteora
+    'projects.meteora.title': 'Meteora',
+    'projects.meteora.description': 'E-commerce de moda con recomendaciones personalizadas y checkout fluido.',
+    'projects.meteora.problem': 'Baja tasa de conversión en descubrimiento de productos',
+    'projects.meteora.decision': 'Filtrado colaborativo para recomendaciones + lazy loading',
+    'projects.meteora.tradeoff': 'Complejidad del algoritmo vs ganancias en conversión',
+    'projects.meteora.result': '↑ 25% tasa de conversión',
 
     // Contact
     'contact.title': 'Hablemos',

@@ -1,5 +1,6 @@
 import { ThemeProvider } from 'next-themes';
 import { LanguageProvider } from '@/app/contexts/LanguageContext';
+import { DecisionModeProvider } from '@/app/contexts/DecisionModeContext';
 import { Navbar } from '@/app/components/Navbar';
 import { Hero } from '@/app/components/Hero';
 import { About } from '@/app/components/About';
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <ThemeProvider attribute="class" defaultTheme="light">
       <LanguageProvider>
+        <DecisionModeProvider>
         <div className="min-h-screen">
           <Navbar />
           <main>
@@ -23,6 +25,7 @@ export default function App() {
           </main>
           <Footer />
         </div>
+        </DecisionModeProvider>
       </LanguageProvider>
     </ThemeProvider>
   );
