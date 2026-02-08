@@ -52,7 +52,7 @@ const translations: Record<Language, Record<string, string>> = {
     'skills.subtitle': 'Technologies and tools I master to create complete solutions',
     'skills.frontend': 'Frontend',
     'skills.backend': 'Backend',
-    'skills.devopsTools': 'DevOps & Tools',
+    'skills.devopsTools': 'UX & Design',
     'skills.alsoWorkWith': 'I also work with:',
 
     // Projects
@@ -174,7 +174,7 @@ const translations: Record<Language, Record<string, string>> = {
     'skills.subtitle': 'Tecnologias e ferramentas que domino para criar soluções completas',
     'skills.frontend': 'Frontend',
     'skills.backend': 'Backend',
-    'skills.devopsTools': 'DevOps & Ferramentas',
+    'skills.devopsTools': 'UX & Design',
     'skills.alsoWorkWith': 'Também trabalho com:',
 
     // Projects
@@ -296,7 +296,7 @@ const translations: Record<Language, Record<string, string>> = {
     'skills.subtitle': 'Tecnologías y herramientas que domino para crear soluciones completas',
     'skills.frontend': 'Frontend',
     'skills.backend': 'Backend',
-    'skills.devopsTools': 'DevOps y Herramientas',
+    'skills.devopsTools': 'UX & Diseño',
     'skills.alsoWorkWith': 'También trabajo con:',
 
     // Projects

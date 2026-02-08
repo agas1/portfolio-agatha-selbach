@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Code2, Database, Cloud, Palette, Zap, Users, Coffee, Award } from 'lucide-react';
+import { Code2, Database, Palette, Zap, Users, Coffee } from 'lucide-react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
 export function About() {
@@ -21,13 +21,6 @@ export function About() {
       shadowColor: 'shadow-emerald-500/25',
     },
     {
-      icon: Cloud,
-      title: t('about.devops'),
-      description: t('about.devopsDesc'),
-      gradient: 'from-orange-500 to-amber-500',
-      shadowColor: 'shadow-orange-500/25',
-    },
-    {
       icon: Palette,
       title: t('about.uiux'),
       description: t('about.uiuxDesc'),
@@ -40,7 +33,6 @@ export function About() {
     { icon: Zap, value: '50+', labelKey: 'about.projectsDelivered', gradient: 'from-yellow-500 to-orange-500' },
     { icon: Users, value: '30+', labelKey: 'about.happyClients', gradient: 'from-blue-500 to-cyan-500' },
     { icon: Coffee, value: '5+', labelKey: 'about.yearsExperience', gradient: 'from-purple-500 to-pink-500' },
-    { icon: Award, value: '99%', labelKey: 'about.satisfactionRate', gradient: 'from-emerald-500 to-teal-500' },
   ];
 
   return (
@@ -88,7 +80,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 lg:mb-20"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 lg:mb-20"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -113,7 +105,7 @@ export function About() {
         </motion.div>
 
         {/* Expertise cards - Bento grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16 lg:mb-20">
           {expertise.map((item, index) => (
             <motion.div
               key={index}

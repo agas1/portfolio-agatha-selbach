@@ -32,10 +32,10 @@ export function Skills() {
       color: 'purple',
       gradient: 'from-purple-500 to-purple-400',
       skills: [
-        { name: 'Docker / K8s', level: 85 },
-        { name: 'AWS / GCP', level: 80 },
-        { name: 'CI/CD', level: 85 },
-        { name: 'Git / GitHub', level: 95 },
+        { name: 'Figma / Adobe XD', level: 85 },
+        { name: 'UI/UX Design', level: 80 },
+        { name: 'Responsive Design', level: 95 },
+        { name: 'Design Systems', level: 85 },
       ],
     },
   ];

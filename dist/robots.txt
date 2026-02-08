@@ -1,0 +1,6 @@
+# Robots.txt for Agatha Selbach Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://agathaselbach.com/sitemap.xml
