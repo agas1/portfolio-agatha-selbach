@@ -1,0 +1,407 @@
+/* Modern CSS Responsive Utilities with Container Queries */
+
+/*
+  Container Queries - O "if/else" do CSS moderno
+  Permite que elementos respondam ao tamanho do container, não da viewport
+*/
+
+/* Define container types */
+.container-responsive {
+  container-type: inline-size;
+  container-name: responsive;
+}
+
+.container-card {
+  container-type: inline-size;
+  container-name: card;
+}
+
+.container-section {
+  container-type: inline-size;
+  container-name: section;
+}
+
+/* Container Query Examples - Como "if/else" */
+
+/* Se o container for menor que 400px */
+@container responsive (max-width: 400px) {
+  .container-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .container-padding {
+    padding: 1rem;
+  }
+
+  .container-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Se o container for entre 400px e 768px */
+@container responsive (min-width: 400px) and (max-width: 768px) {
+  .container-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .container-padding {
+    padding: 1.5rem;
+  }
+
+  .container-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Se o container for maior que 768px */
+@container responsive (min-width: 768px) {
+  .container-text {
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .container-padding {
+    padding: 2rem;
+  }
+
+  .container-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Container Queries para Cards */
+@container card (max-width: 300px) {
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-description {
+    font-size: 0.75rem;
+  }
+
+  .card-image {
+    height: 150px;
+  }
+}
+
+@container card (min-width: 300px) {
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-description {
+    font-size: 0.875rem;
+  }
+
+  .card-image {
+    height: 200px;
+  }
+}
+
+/* Modern CSS Features */
+
+/* Aspect Ratio - Mantém proporção */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-portrait {
+  aspect-ratio: 3 / 4;
+}
+
+/* Clamp - Tamanhos fluidos responsivos */
+.fluid-text-sm {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.fluid-text-base {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+.fluid-text-lg {
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+}
+
+.fluid-text-xl {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+.fluid-text-2xl {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.fluid-text-3xl {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+/* Fluid Spacing */
+.fluid-padding-sm {
+  padding: clamp(0.5rem, 2vw, 1rem);
+}
+
+.fluid-padding-md {
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.fluid-padding-lg {
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.fluid-margin-sm {
+  margin: clamp(0.5rem, 2vw, 1rem);
+}
+
+.fluid-margin-md {
+  margin: clamp(1rem, 3vw, 2rem);
+}
+
+.fluid-margin-lg {
+  margin: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* Gap responsivo fluido */
+.fluid-gap-sm {
+  gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.fluid-gap-md {
+  gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.fluid-gap-lg {
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* CSS Grid com auto-fit (responsivo automático) */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.auto-grid-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.auto-grid-lg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* Has Selector - Estilo condicional baseado em filhos */
+.card:has(.featured) {
+  border-color: rgb(168 85 247 / 0.5);
+  background: rgb(168 85 247 / 0.05);
+}
+
+.form-group:has(:focus) {
+  transform: scale(1.02);
+  transition: transform 0.2s;
+}
+
+.navigation:has(.active) {
+  background: rgb(31 41 55 / 0.8);
+}
+
+/* Logical Properties - Independente de direção do texto */
+.block-start {
+  margin-block-start: clamp(1rem, 3vw, 2rem);
+}
+
+.block-end {
+  margin-block-end: clamp(1rem, 3vw, 2rem);
+}
+
+.inline-start {
+  margin-inline-start: clamp(0.5rem, 2vw, 1rem);
+}
+
+.inline-end {
+  margin-inline-end: clamp(0.5rem, 2vw, 1rem);
+}
+
+/* Scroll Snap - Smooth scrolling */
+.scroll-container {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  display: flex;
+  gap: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Modern Media Queries */
+
+/* Prefer reduced motion - Acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+  .auto-theme {
+    background-color: rgb(17 24 39);
+    color: rgb(243 244 246);
+  }
+}
+
+/* Light mode preference */
+@media (prefers-color-scheme: light) {
+  .auto-theme {
+    background-color: rgb(255 255 255);
+    color: rgb(17 24 39);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .adaptive-contrast {
+    border-width: 2px;
+    font-weight: 600;
+  }
+}
+
+/* Touch device optimization */
+@media (hover: none) and (pointer: coarse) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem;
+  }
+
+  .hover-effect {
+    /* Disable hover effects on touch devices */
+    transform: none !important;
+  }
+}
+
+/* Mouse/trackpad device optimization */
+@media (hover: hover) and (pointer: fine) {
+  .hover-effect:hover {
+    transform: translateY(-4px);
+    transition: transform 0.2s;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-full-width {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  * {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Orientation based styles */
+@media (orientation: landscape) {
+  .landscape-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (orientation: portrait) {
+  .portrait-stack {
+    flex-direction: column;
+  }
+}
+
+/* Screen size ranges (Mobile-first) */
+@media (max-width: 639px) {
+  .mobile-stack {
+    flex-direction: column;
+  }
+
+  .mobile-full {
+    width: 100%;
+  }
+
+  .mobile-text-center {
+    text-align: center;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .sm-two-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .md-three-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg-four-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Utility: Hide on specific breakpoints */
+.hide-mobile {
+  @media (max-width: 639px) {
+    display: none;
+  }
+}
+
+.hide-tablet {
+  @media (min-width: 640px) and (max-width: 1023px) {
+    display: none;
+  }
+}
+
+.hide-desktop {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
+/* Show only on specific breakpoints */
+.show-mobile {
+  display: none;
+  @media (max-width: 639px) {
+    display: block;
+  }
+}
+
+.show-tablet {
+  display: none;
+  @media (min-width: 640px) and (max-width: 1023px) {
+    display: block;
+  }
+}
+
+.show-desktop {
+  display: none;
+  @media (min-width: 1024px) {
+    display: block;
+  }
+}

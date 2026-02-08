@@ -18,15 +18,16 @@ export function Footer() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-purple-500/5 rounded-full blur-[60px]" />
       </div>
 
-      <div className="w-full max-w-[1400px] mx-auto px-12 py-16 relative z-10">
-        <div className="flex justify-between items-center">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 relative z-10">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-0">
           {/* Logo and info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-center sm:text-left"
           >
-            <h3 className="text-2xl font-bold mb-2">
+            <h3 className="text-xl sm:text-2xl font-bold mb-2">
               <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 Agatha
               </span>{' '}
@@ -34,7 +35,7 @@ export function Footer() {
                 Selbach
               </span>
             </h3>
-            <p className="text-gray-500">{t('footer.role')}</p>
+            <p className="text-sm sm:text-base text-gray-500">{t('footer.role')}</p>
           </motion.div>
 
           {/* Social links */}
@@ -42,9 +43,9 @@ export function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex gap-4"
+            className="flex gap-3 sm:gap-4"
           >
-            {socialLinks.map((social, index) => (
+            {socialLinks.map((social) => (
               <motion.a
                 key={social.label}
                 href={social.href}
@@ -64,14 +65,14 @@ export function Footer() {
         </div>
 
         {/* Divider with gradient */}
-        <div className="my-10 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
+        <div className="my-8 sm:my-10 h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent" />
 
         {/* Copyright */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex justify-between items-center text-sm text-gray-500"
+          className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-xs sm:text-sm text-gray-500 text-center sm:text-left"
         >
           <p>© 2026 Agatha Selbach. All rights reserved.</p>
           <p className="flex items-center gap-2">

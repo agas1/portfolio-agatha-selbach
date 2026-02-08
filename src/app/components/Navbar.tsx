@@ -1,5 +1,5 @@
-import { motion } from 'motion/react';
-import { Globe } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Globe, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 import { DecisionToggle } from '@/app/components/DecisionToggle';
@@ -7,6 +7,7 @@ import { DecisionToggle } from '@/app/components/DecisionToggle';
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
@@ -18,6 +19,7 @@ export function Navbar() {
   }, []);
 
   const scrollToSection = (href: string) => {
+    setIsMobileMenuOpen(false); // Close mobile menu when clicking a link
     if (href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -55,13 +57,13 @@ export function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="w-full max-w-[1400px] mx-auto px-12">
-        <div className="flex justify-between items-center h-20">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
           <motion.button
             onClick={() => scrollToSection('#')}
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold tracking-tight"
+            className="text-lg sm:text-xl font-bold tracking-tight z-50"
           >
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               Agatha
@@ -71,8 +73,8 @@ export function Navbar() {
             </span>
           </motion.button>
 
-          {/* Desktop Navigation */}
-          <div className="flex items-center gap-8">
+          {/* Desktop Navigation - Hidden on mobile */}
+          <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item, index) => (
               <motion.button
                 key={index}
@@ -141,8 +143,87 @@ export function Navbar() {
               </motion.button>
             </div>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div className="flex items-center gap-3 lg:hidden z-50">
+            {/* Decision Mode Toggle - Mobile */}
+            <DecisionToggle />
+
+            <motion.button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              whileTap={{ scale: 0.95 }}
+              className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </motion.button>
+          </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-gray-950/95 backdrop-blur-xl border-b border-gray-800/50 overflow-hidden"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {/* Mobile Navigation Links */}
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={index}
+                  onClick={() => scrollToSection(item.href)}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="block w-full text-left px-4 py-3 text-base font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+                >
+                  {item.label}
+                </motion.button>
+              ))}
+
+              {/* Mobile Language Selector */}
+              <div className="pt-4 border-t border-gray-800">
+                <p className="px-4 text-xs text-gray-500 uppercase tracking-wider mb-3">
+                  Language
+                </p>
+                <div className="flex gap-2 px-4">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code as 'en' | 'pt' | 'es');
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className={`flex-1 px-3 py-2 text-sm rounded-lg transition-all ${
+                        language === lang.code
+                          ? 'text-purple-400 font-medium bg-purple-500/20 border border-purple-500/50'
+                          : 'text-gray-400 bg-gray-800/50 border border-gray-700/50'
+                      }`}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Mobile CTA Button */}
+              <motion.button
+                onClick={() => scrollToSection('#contact')}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white text-base font-medium rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+              >
+                {t('nav.talkToMe')}
+              </motion.button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

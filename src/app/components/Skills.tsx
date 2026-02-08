@@ -65,24 +65,24 @@ export function Skills() {
       {/* Grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-      <div className="w-full max-w-[1400px] mx-auto px-12 relative z-10">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-medium mb-6"
+            className="inline-block px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
           >
             {t('skills.title')}
           </motion.span>
-          <h2 className="text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 px-4">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               {t('skills.heading1')}
             </span>
@@ -91,13 +91,13 @@ export function Skills() {
               {t('skills.heading2')}
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed px-4">
             {t('skills.subtitle')}
           </p>
         </motion.div>
 
         {/* Skills grid */}
-        <div className="grid grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16 lg:mb-20">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
@@ -110,11 +110,11 @@ export function Skills() {
               {/* Card glow effect */}
               <div className={`absolute -inset-0.5 bg-gradient-to-r ${category.gradient} rounded-2xl opacity-0 group-hover:opacity-50 blur transition-all duration-500`} />
 
-              <div className="relative h-full p-8 rounded-2xl bg-gray-950/80 backdrop-blur-sm border border-gray-800 group-hover:border-transparent transition-all">
+              <div className="relative h-full p-6 sm:p-8 rounded-2xl bg-gray-950/80 backdrop-blur-sm border border-gray-800 group-hover:border-transparent transition-all">
                 {/* Category header */}
-                <div className="flex items-center gap-3 mb-8">
+                <div className="flex items-center gap-3 mb-6 sm:mb-8">
                   <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${category.gradient}`} />
-                  <h3 className="text-xl font-bold text-white">{category.category}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">{category.category}</h3>
                 </div>
 
                 {/* Skills list */}
@@ -163,11 +163,11 @@ export function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-gray-500 text-sm font-medium uppercase tracking-wider mb-8">
+          <p className="text-gray-500 text-xs sm:text-sm font-medium uppercase tracking-wider mb-6 sm:mb-8">
             {t('skills.alsoWorkWith')}
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 lg:gap-4">
             {technologies.map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -184,8 +184,8 @@ export function Skills() {
                 {/* Glow effect */}
                 <div className={`absolute -inset-0.5 bg-gradient-to-r ${tech.color} rounded-xl opacity-0 group-hover:opacity-75 blur transition-all duration-300`} />
 
-                <div className="relative px-5 py-3 bg-gray-900 border border-gray-800 rounded-xl group-hover:border-transparent transition-all">
-                  <span className={`font-medium bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}>
+                <div className="relative px-3 py-2 sm:px-4 sm:py-2.5 lg:px-5 lg:py-3 bg-gray-900 border border-gray-800 rounded-lg sm:rounded-xl group-hover:border-transparent transition-all">
+                  <span className={`text-xs sm:text-sm font-medium bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}>
                     {tech.name}
                   </span>
                 </div>

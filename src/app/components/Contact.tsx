@@ -99,17 +99,17 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-sm font-medium mb-6"
+            className="inline-block px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
           >
             {t('contact.title')}
           </motion.span>
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 px-4">
             <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               {t('contact.heading1')}
             </span>
@@ -118,7 +118,7 @@ export function Contact() {
               {t('contact.heading2')}
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed px-4">
             {t('contact.subtitle')}
           </p>
         </motion.div>
@@ -145,13 +145,13 @@ export function Contact() {
                 {/* Card glow */}
                 <div className={`absolute -inset-0.5 bg-gradient-to-r ${item.gradient} rounded-xl opacity-0 group-hover:opacity-50 blur transition-all duration-300`} />
 
-                <div className="relative p-6 bg-gray-950 border border-gray-800 rounded-xl group-hover:border-transparent transition-all">
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${item.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
-                      <item.icon className="w-5 h-5 text-white" />
+                <div className="relative p-4 sm:p-6 bg-gray-950 border border-gray-800 rounded-xl group-hover:border-transparent transition-all">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r ${item.gradient} flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
+                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-gray-500 text-sm mb-1">{item.title}</p>
+                      <p className="text-gray-500 text-xs sm:text-sm mb-1">{item.title}</p>
                       {item.link ? (
                         <a
                           href={item.link}
@@ -177,15 +177,15 @@ export function Contact() {
               className="relative mt-8"
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-purple-400 rounded-xl opacity-75 blur" />
-              <div className="relative p-8 bg-gray-950 rounded-xl">
-                <div className="flex items-center gap-2 mb-4">
+              <div className="relative p-6 sm:p-8 bg-gray-950 rounded-xl">
+                <div className="flex items-center gap-2 mb-3 sm:mb-4">
                   <span className="w-3 h-3 bg-purple-500 rounded-full animate-pulse" />
-                  <span className="text-purple-400 font-medium text-sm">{t('contact.available')}</span>
+                  <span className="text-purple-400 font-medium text-xs sm:text-sm">{t('contact.available')}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">
                   {t('contact.availableTitle')}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
                   {t('contact.availableText')}
                 </p>
               </div>
@@ -207,9 +207,9 @@ export function Contact() {
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className="relative p-10 bg-gray-950/80 backdrop-blur-sm border border-gray-800 rounded-2xl"
+                className="relative p-6 sm:p-8 lg:p-10 bg-gray-950/80 backdrop-blur-sm border border-gray-800 rounded-2xl"
               >
-                <div className="space-y-6">
+                <div className="space-y-5 sm:space-y-6">
                   {/* Name field */}
                   <div className="relative">
                     <label
@@ -229,7 +229,7 @@ export function Contact() {
                       onFocus={() => setFocused('name')}
                       onBlur={() => setFocused(null)}
                       required
-                      className="w-full px-5 py-4 bg-gray-900 border border-gray-800 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 sm:px-5 sm:py-4 bg-gray-900 border border-gray-800 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all text-white placeholder-gray-600 text-sm sm:text-base"
                       placeholder={t('contact.namePlaceholder')}
                     />
                   </div>
@@ -253,7 +253,7 @@ export function Contact() {
                       onFocus={() => setFocused('email')}
                       onBlur={() => setFocused(null)}
                       required
-                      className="w-full px-5 py-4 bg-gray-900 border border-gray-800 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 sm:px-5 sm:py-4 bg-gray-900 border border-gray-800 rounded-xl focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all text-white placeholder-gray-600 text-sm sm:text-base"
                       placeholder={t('contact.emailPlaceholder')}
                     />
                   </div>
@@ -277,7 +277,7 @@ export function Contact() {
                       onBlur={() => setFocused(null)}
                       required
                       rows={6}
-                      className="w-full px-5 py-4 bg-gray-900 border border-gray-800 rounded-xl focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all resize-none text-white placeholder-gray-600"
+                      className="w-full px-4 py-3 sm:px-5 sm:py-4 bg-gray-900 border border-gray-800 rounded-xl focus:outline-none focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all resize-none text-white placeholder-gray-600 text-sm sm:text-base"
                       placeholder={t('contact.messagePlaceholder')}
                     />
                   </div>
@@ -295,13 +295,13 @@ export function Contact() {
                     disabled={isLoading}
                     whileHover={{ scale: isLoading ? 1 : 1.02 }}
                     whileTap={{ scale: isLoading ? 1 : 0.98 }}
-                    className={`group relative w-full py-5 rounded-xl overflow-hidden ${isLoading ? 'cursor-not-allowed opacity-80' : ''}`}
+                    className={`group relative w-full py-4 sm:py-5 rounded-xl overflow-hidden ${isLoading ? 'cursor-not-allowed opacity-80' : ''}`}
                   >
                     {/* Button gradient background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-500" />
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                    <span className="relative flex items-center justify-center gap-3 text-white font-semibold text-lg">
+                    <span className="relative flex items-center justify-center gap-2 sm:gap-3 text-white font-semibold text-base sm:text-lg">
                       {isLoading ? (
                         <>
                           <Loader2 className="w-5 h-5 animate-spin" />
